@@ -6,8 +6,8 @@ import * as axios from 'axios';
 import { usersAPI } from "../../api/api";
 
 let Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pagesSize);
 
+  let pagesCount = Math.ceil(props.totalUsersCount / props.pagesSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
