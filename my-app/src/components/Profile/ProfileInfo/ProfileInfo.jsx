@@ -3,8 +3,8 @@ import s from "./ProfileInfo.module.css";
 import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({profile,status, updateStatus}) => {
+  if (!profile) {
     return <Preloader />;
   }
 
@@ -14,8 +14,8 @@ const ProfileInfo = (props) => {
         <img src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQYSibIOdUg1VOegwxLDq35TNE8I_FOo-qwyDbeXwS96iUnuWfcyR2ZquLrN2dPqJn1Gza29BUCpYUHGB7wMDQ" />
       </div>
       <div className={s.descriptionBlock}>
-        <img src={props.profile.photos.large} />
-        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+        <img src={profile.photos.large} />
+        <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </div>
     </div>
   );
